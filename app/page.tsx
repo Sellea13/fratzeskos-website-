@@ -16,7 +16,7 @@ type Language = 'el' | 'en';
 
 const copy = {
   el: {
-    nav: { story: 'Η ιστορία μας', flavors: 'Οι γεύσεις', contact: 'Επικοινωνία' },
+    nav: { story: 'Η ιστορία μας', gallery: 'Φωτογραφίες', flavors: 'Οι γεύσεις', contact: 'Επικοινωνία' },
     eyebrow: 'Νέα Χώρα · Χανιά · Κρήτη',
     title: 'Δίπλα στη θάλασσα, όπως παλιά.',
     intro:
@@ -27,6 +27,14 @@ const copy = {
     storyTitle: 'Κρητική φιλοξενία με θέα το απέραντο γαλάζιο.',
     storyBody:
       'Στη Νέα Χώρα των Χανίων, λίγα βήματα από την άμμο, σας περιμένουμε για όσα αγαπάμε κι εμείς: καθαρές γεύσεις, καλό τσίπουρο και παρέες που μένουν στο τραπέζι μέχρι να δύσει ο ήλιος.',
+    galleryKicker: 'Το μαγαζί μας',
+    galleryTitle: 'Αληθινές στιγμές, δίπλα στη θάλασσα',
+    galleryAlts: [
+      'Θαλασσινοί μεζέδες στο τραπέζι',
+      'Η πρόσοψη και τα τραπέζια του εστιατορίου',
+      'Η φωτεινή εσωτερική σάλα του εστιατορίου',
+      'Οι δώδεκα κανόνες του τσιπουράδικου στον τοίχο',
+    ],
     flavorsKicker: 'Απλά και νόστιμα',
     flavorsTitle: 'Γεύσεις της θάλασσας και της Κρήτης',
     items: [
@@ -47,7 +55,7 @@ const copy = {
     footer: 'Νέα Χώρα · Χανιά · Κρήτη',
   },
   en: {
-    nav: { story: 'Our story', flavors: 'Flavours', contact: 'Contact' },
+    nav: { story: 'Our story', gallery: 'Photos', flavors: 'Flavours', contact: 'Contact' },
     eyebrow: 'Nea Chora · Chania · Crete',
     title: 'By the sea, just as it used to be.',
     intro:
@@ -58,6 +66,14 @@ const copy = {
     storyTitle: 'Cretan hospitality overlooking the endless blue.',
     storyBody:
       'In Nea Chora, Chania, just a few steps from the sand, we welcome you to everything we love: honest flavours, good tsipouro and company that stays around the table until sunset.',
+    galleryKicker: 'Our place',
+    galleryTitle: 'Real moments, right by the sea',
+    galleryAlts: [
+      'A table filled with seafood meze',
+      'The restaurant frontage and outdoor tables',
+      'The bright dining room inside the restaurant',
+      'The twelve rules of the tsipouradiko on the wall',
+    ],
     flavorsKicker: 'Simple and delicious',
     flavorsTitle: 'Flavours of the sea and Crete',
     items: [
@@ -104,6 +120,7 @@ export default function Home() {
 
           <nav aria-label={language === 'el' ? 'Κύρια πλοήγηση' : 'Main navigation'}>
             <a href="#story">{t.nav.story}</a>
+            <a href="#gallery">{t.nav.gallery}</a>
             <a href="#flavors">{t.nav.flavors}</a>
             <a href="#contact">{t.nav.contact}</a>
           </nav>
@@ -153,6 +170,32 @@ export default function Home() {
           <p className="eyebrow">{t.storyKicker}</p>
           <h2>{t.storyTitle}</h2>
           <p className="lead">{t.storyBody}</p>
+        </div>
+      </section>
+
+      <section id="gallery" className="gallery section">
+        <div className="shell">
+          <div className="gallery-heading">
+            <p className="eyebrow">{t.galleryKicker}</p>
+            <h2>{t.galleryTitle}</h2>
+          </div>
+          <div className="gallery-grid">
+            {[
+              '/seafood-table.jpg',
+              '/restaurant-front.jpg',
+              '/restaurant-interior.jpg',
+              '/tsipouro-rules.jpg',
+            ].map((src, index) => (
+              <figure key={src}>
+                <img
+                  src={src}
+                  alt={t.galleryAlts[index]}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

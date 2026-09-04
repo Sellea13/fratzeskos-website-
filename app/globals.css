@@ -41,7 +41,7 @@ a { color: inherit; }
   background:
     linear-gradient(90deg, rgba(2, 28, 47, 0.82) 0%, rgba(3, 41, 66, 0.51) 42%, rgba(3, 31, 48, 0.11) 75%),
     linear-gradient(0deg, rgba(2, 28, 47, 0.42) 0%, transparent 45%),
-    url('/nea-chora-taverna.png') center / cover no-repeat;
+    url('/restaurant-sunset.jpg') center 62% / cover no-repeat;
   transform: scale(1.01);
 }
 .site-header {
@@ -200,6 +200,41 @@ h2 {
   font-size: 1.15rem;
   line-height: 1.85;
 }
+.gallery {
+  padding-top: 20px;
+  background: var(--white);
+}
+.gallery-heading {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 90px;
+  align-items: start;
+  margin-bottom: 54px;
+}
+.gallery-heading h2 { margin-bottom: 0; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.gallery-grid figure {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--sand);
+}
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+.gallery-grid figure:first-child img { object-position: center; }
+.gallery-grid figure:nth-child(2) img { object-position: center 33%; }
+.gallery-grid figure:hover img { transform: scale(1.025); }
 .flavors { background: var(--sand); }
 .flavors h2 { margin-bottom: 60px; }
 .flavor-grid {
@@ -289,9 +324,11 @@ h2 {
     background:
       linear-gradient(90deg, rgba(2, 28, 47, 0.84) 0%, rgba(3, 41, 66, 0.43) 72%),
       linear-gradient(0deg, rgba(2, 28, 47, 0.5) 0%, transparent 60%),
-      url('/nea-chora-taverna.png') 61% center / cover no-repeat;
+      url('/restaurant-sunset.jpg') 54% center / cover no-repeat;
   }
   .story, .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+  .gallery-heading { grid-template-columns: 1fr; gap: 10px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .story-mark { width: 110px; height: 110px; }
   .flavor-grid { grid-template-columns: 1fr; }
   .flavor-grid article,
@@ -320,6 +357,8 @@ h2 {
   h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 20px; }
   .section { padding-block: 82px; }
+  .gallery { padding-top: 0; }
+  .gallery-grid { gap: 8px; }
   .place { padding-block: 28px; }
   .place-card { min-height: 480px; padding: 42px 28px; }
   .site-footer .shell { flex-direction: column; gap: 6px; }
