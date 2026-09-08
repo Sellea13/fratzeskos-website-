@@ -64,7 +64,7 @@ a { color: inherit; }
 .brand span { display: flex; flex-direction: column; line-height: 1.2; }
 .brand strong {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.01em;
 }
@@ -295,7 +295,7 @@ h2 {
   font-size: 1.05rem;
 }
 .contact-links { display: grid; gap: 16px; margin-top: 42px; }
-.contact-links span {
+.contact-links a {
   display: flex;
   min-height: 60px;
   align-items: center;
@@ -303,6 +303,14 @@ h2 {
   padding: 14px 18px;
   border: 1px solid rgba(255, 255, 255, 0.19);
   color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+}
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
 }
 .contact-links svg { width: 20px; color: #bce8f3; }
 .site-footer {
@@ -362,6 +370,13 @@ h2 {
   .place { padding-block: 28px; }
   .place-card { min-height: 480px; padding: 42px 28px; }
   .site-footer .shell { flex-direction: column; gap: 6px; }
+}
+
+@media (max-width: 390px) {
+  .brand { gap: 7px; }
+  .brand svg { width: 23px; height: 23px; }
+  .brand strong { font-size: 0.9rem; }
+  .brand small { font-size: 0.52rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

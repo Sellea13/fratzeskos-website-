@@ -49,9 +49,9 @@ const copy = {
     contactKicker: 'Κρατήσεις',
     contactTitle: 'Ελάτε να μοιραστούμε το τραπέζι.',
     contactBody:
-      'Σύντομα θα μπορείτε να μας καλέσετε ή να μας στείλετε email για την κράτησή σας.',
-    phone: 'Τηλέφωνο σύντομα',
-    email: 'Email σύντομα',
+      'Για κράτηση, καλέστε μας ή στείλτε μας email.',
+    phone: '28210 86206',
+    email: 'boliotikotsiporadiko2@gmail.com',
     footer: 'Νέα Χώρα · Χανιά · Κρήτη',
   },
   en: {
@@ -88,9 +88,9 @@ const copy = {
     contactKicker: 'Reservations',
     contactTitle: 'Come share our table.',
     contactBody:
-      'Soon you will be able to call or email us to reserve your table.',
-    phone: 'Phone coming soon',
-    email: 'Email coming soon',
+      'To reserve your table, call us or send us an email.',
+    phone: '+30 28210 86206',
+    email: 'boliotikotsiporadiko2@gmail.com',
     footer: 'Nea Chora · Chania · Crete',
   },
 };
@@ -110,11 +110,11 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-backdrop" />
         <header className="site-header shell">
-          <a className="brand" href="#top" aria-label="Νέα Χώρα – αρχική">
+          <a className="brand" href="#top" aria-label="Βολιωτικο Τσιπουράδικο – αρχική">
             <Waves aria-hidden="true" />
             <span>
-              <strong>Νέα Χώρα</strong>
-              <small>Τσιπουράδικο · Ταβέρνα</small>
+              <strong>Βολιωτικο Τσιπουράδικο</strong>
+              <small>Νέα Χώρα · Χανιά</small>
             </span>
           </a>
 
@@ -241,14 +241,14 @@ export default function Home() {
           <div className="contact-details">
             <p>{t.contactBody}</p>
             <div className="contact-links">
-              <span>
+              <a href="tel:+302821086206" aria-label={`${language === 'el' ? 'Καλέστε στο' : 'Call'} ${t.phone}`}>
                 <Phone aria-hidden="true" />
                 {t.phone}
-              </span>
-              <span>
+              </a>
+              <a href="mailto:boliotikotsiporadiko2@gmail.com">
                 <Mail aria-hidden="true" />
                 {t.email}
-              </span>
+              </a>
             </div>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function Home() {
 
       <footer className="site-footer">
         <div className="shell">
-          <span>© 2026 Νέα Χώρα</span>
+          <span>© 2026 Βολιωτικο Τσιπουράδικο</span>
           <span>{t.footer}</span>
         </div>
       </footer>
