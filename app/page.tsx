@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import {
   ArrowDown,
   Fish,
@@ -187,11 +188,11 @@ export default function Home() {
               '/tsipouro-rules.jpg',
             ].map((src, index) => (
               <figure key={src}>
-                <img
+                <Image
                   src={src}
                   alt={t.galleryAlts[index]}
-                  loading="lazy"
-                  decoding="async"
+                  fill
+                  sizes="(max-width: 720px) 50vw, 25vw"
                 />
               </figure>
             ))}
